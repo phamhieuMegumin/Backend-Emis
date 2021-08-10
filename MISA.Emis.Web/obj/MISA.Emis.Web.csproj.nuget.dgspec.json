@@ -1,0 +1,222 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Web\\MISA.Emis.Web.csproj": {}
+  },
+  "projects": {
+    "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Core\\MISA.Emis.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Core\\MISA.Emis.Core.csproj",
+        "projectName": "MISA.Emis.Core",
+        "projectPath": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Core\\MISA.Emis.Core.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Infracstructure\\MISA.Emis.Infracstructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Infracstructure\\MISA.Emis.Infracstructure.csproj",
+        "projectName": "MISA.Emis.Infracstructure",
+        "projectPath": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Infracstructure\\MISA.Emis.Infracstructure.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Infracstructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Core\\MISA.Emis.Core.csproj": {
+                "projectPath": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Core\\MISA.Emis.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.90, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[1.3.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Web\\MISA.Emis.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Web\\MISA.Emis.Web.csproj",
+        "projectName": "MISA.Emis.Web",
+        "projectPath": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Web\\MISA.Emis.Web.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Core\\MISA.Emis.Core.csproj": {
+                "projectPath": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Core\\MISA.Emis.Core.csproj"
+              },
+              "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Infracstructure\\MISA.Emis.Infracstructure.csproj": {
+                "projectPath": "D:\\Fresher-Emis\\backend\\MISA.Emis\\MISA.Emis.Infracstructure\\MISA.Emis.Infracstructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

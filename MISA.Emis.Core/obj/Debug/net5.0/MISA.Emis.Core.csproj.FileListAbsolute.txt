@@ -1,0 +1,12 @@
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\bin\Debug\net5.0\MISA.Emis.Core.deps.json
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\bin\Debug\net5.0\MISA.Emis.Core.dll
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\bin\Debug\net5.0\ref\MISA.Emis.Core.dll
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\bin\Debug\net5.0\MISA.Emis.Core.pdb
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.csprojAssemblyReference.cache
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.AssemblyInfoInputs.cache
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.AssemblyInfo.cs
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.csproj.CoreCompileInputs.cache
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.dll
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\ref\MISA.Emis.Core.dll
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.pdb
