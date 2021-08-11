@@ -33,9 +33,10 @@ namespace MISA.Emis.Infracstructure.Repository
         #endregion
 
         #region Methods
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll(Guid accountId)
         {
-            return _dbConnection.Query<T>($"Proc_Get{_className}s", commandType: CommandType.StoredProcedure);
+            dynamicParameters.Add("@m_accountId", accountId);
+            return _dbConnection.Query<T>($"Proc_Get{_className}s", dynamicParameters ,commandType: CommandType.StoredProcedure);
         }
 
         public T GetById(Guid entityId)
