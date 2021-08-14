@@ -15,6 +15,15 @@ namespace MISA.Emis.Core.Interfaces.Repository
         /// CreatedBy : PQHIEU(11/06/2021)
         IEnumerable<T> GetAll(Guid accountId);
 
+        
+
+        /// <summary>
+        /// Lấy danh sách tất cả bản ghi 
+        /// </summary>
+        /// <returns>Danh sách tất cả bản ghi</returns>
+        /// CreatedBy : PQHIEU(11/06/2021)
+        IEnumerable<T> GetAllWithoutAccount();
+
         /// <summary>
         /// Lấy bản ghi theo ID
         /// </summary>

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MISA.Emis.Core.Entities;
 using MISA.Emis.Core.Interfaces.Repository;
@@ -6,6 +7,7 @@ using MISA.Emis.Core.Interfaces.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MISA.Emis.Web.Controllers
@@ -54,6 +56,19 @@ namespace MISA.Emis.Web.Controllers
             if(rowEffects > 0)
             {
                 return Ok();
+            }
+            return NoContent();
+        }
+
+        [Authorize]
+        [HttpGet("Authentication")]
+        public IActionResult Authentication()
+        {
+            var claimsIdentity = this.User.Identity as ClaimsIdentity;
+            var accountId = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
+            if (accountId != null)
+            {
+                return Ok(accountId);
             }
             return NoContent();
         }

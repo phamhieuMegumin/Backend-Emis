@@ -79,7 +79,12 @@ namespace MISA.Emis.Infracstructure.Repository
                 var propertyValue = property.GetValue(entity);
                 dynamicParameters.Add($"m_{propertyName}", propertyValue);
             }
-        } 
+        }
+
+        public IEnumerable<T> GetAllWithoutAccount()
+        {
+            return _dbConnection.Query<T>($"Proc_Get{_className}s", commandType: CommandType.StoredProcedure);
+        }
         #endregion
 
     }

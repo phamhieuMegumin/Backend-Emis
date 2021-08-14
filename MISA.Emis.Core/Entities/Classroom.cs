@@ -14,6 +14,10 @@ namespace MISA.Emis.Core.Entities
         public Guid ClassroomId { get; set; }
         public Guid AccountId { get; set; }
         public string ClassroomName { get; set; }
-        public string Category { get; set; }
+        public Guid GradeId { get; set; }
+        public string GradeName { get; set; }
+        public string Subject { get; set; }
+        public string Description { get; set; }
+        public int Approve { get; set; }
     }
 }
