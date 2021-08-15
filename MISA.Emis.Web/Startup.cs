@@ -69,6 +69,8 @@ namespace MISA.Emis.Web
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IClassroomRepository, ClassroomRepository>();
+            services.AddScoped<IManageSubjectService, ManageSubjectService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -52,7 +52,7 @@ namespace MISA.Emis.Web.Controllers
         [HttpPost("register")]
         public IActionResult Register(Account account)
         {
-            var rowEffects = _accountService.Insert(account);
+            var rowEffects = _accountService.InsertWithoutAccount(account);
             if(rowEffects > 0)
             {
                 return Ok();

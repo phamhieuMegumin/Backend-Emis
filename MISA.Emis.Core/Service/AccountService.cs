@@ -29,13 +29,13 @@ namespace MISA.Emis.Core.Service
         #endregion
 
         #region Methods
-        public override int Insert(Account account)
+        public override int InsertWithoutAccount(Account account)
         {
             // Tạo chuỗi muối để tiến hành mã hóa mật khẩu
             var salt = BCrypt.Net.BCrypt.GenerateSalt(10);
             // Thực hiện mã hóa mật khẩu trước khi lưu
             account.Password = BCrypt.Net.BCrypt.HashPassword(account.Password, salt);
-            return base.Insert(account);
+            return base.InsertWithoutAccount(account);
         }
 
         public ResponseLogin Login(string userName, string password)

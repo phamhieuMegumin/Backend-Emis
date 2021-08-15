@@ -35,19 +35,21 @@ namespace MISA.Emis.Core.Interfaces.Repository
         /// <summary>
         /// Thêm mới một bản ghi
         /// </summary>
+        /// <param name="accountId">Tài khoản được thêm</param>
         /// <param name="entity">Bản ghi muốn thêm</param>
         /// <returns>Số lượng bản ghi được thêm thành công</returns>
         /// CreatedBy : PQHIEU(11/06/2021)
-        int Insert(T entity);
+        int Insert(Guid accountId ,T entity);
 
         /// <summary>
         /// Cập nhật thông tin bản ghi
         /// </summary>
+        /// <param name="accountId">Tài khoản được update</param>
         /// <param name="entityId">ID bản ghi muốn cập nhật</param>
         /// <param name="entity">Thông tin bản ghi mới</param>
         /// <returns>Số lượng bản ghi được cập nhật thành công</returns>
         /// CreatedBy : PQHIEU(11/06/2021)
-        int Update(Guid entityId, T entity);
+        int Update(Guid accountId , Guid entityId, T entity);
 
         /// <summary>
         /// Xóa một bản ghi
@@ -56,5 +58,23 @@ namespace MISA.Emis.Core.Interfaces.Repository
         /// <returns>Số lượng bản ghi xóa thành công</returns>
         /// CreatedBy : PQHIEU(11/06/2021)
         int Delete(Guid entityId);
+
+        /// <summary>
+        /// Thêm mới một bản ghi
+        /// </summary>
+        /// <param name="entity">Bản ghi muốn thêm</param>
+        /// <returns>Số lượng bản ghi được thêm thành công</returns>
+        /// CreatedBy : PQHIEU(11/06/2021)
+        int InsertWithoutAccount(T entity);
+
+        /// <summary>
+        /// Cập nhật một bản ghi
+        /// </summary>
+        /// <param name="entityId">ID bản ghi cần cập nhật</param>
+        /// <param name="entity">Thông tin bản ghi</param>
+        /// <returns></returns>
+        int UpdateWithoutAccount(Guid entityId, T entity);
+
+
     }
 }

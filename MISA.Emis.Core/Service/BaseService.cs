@@ -16,15 +16,28 @@ namespace MISA.Emis.Core.Service
         {
             _baseRepository = baseRepository;
         }
-        public virtual int Insert(T entity)
-        {
 
-            return _baseRepository.Insert(entity);
+        public int Insert(Guid accountId, T entity)
+        {
+            return _baseRepository.Insert(accountId, entity);
         }
 
-        public int Update(Guid entityId, T entity)
+       
+
+        public virtual int InsertWithoutAccount(T entity)
         {
-            return _baseRepository.Update(entityId, entity);
+
+            return _baseRepository.InsertWithoutAccount(entity);
+        }
+
+        public int Update(Guid accountId, Guid entityId, T entity)
+        {
+            return _baseRepository.Update(accountId, entityId, entity);
+        }
+
+        public int UpdateWithoutAccount(Guid entityId, T entity)
+        {
+            return _baseRepository.UpdateWithoutAccount(entityId, entity);
         }
 
         //protected virtual void Validate(T entity)

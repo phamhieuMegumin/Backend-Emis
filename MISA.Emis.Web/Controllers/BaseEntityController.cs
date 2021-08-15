@@ -57,9 +57,11 @@ namespace MISA.Emis.Web.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Insert(T entity)
+        public virtual IActionResult Insert(T entity)
         {
-            var rowEffects = _baseService.Insert(entity);
+            var claimsIdentity = this.User.Identity as ClaimsIdentity;
+            var accountId = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
+            var rowEffects = _baseService.Insert(Guid.Parse(accountId) ,entity);
             if(rowEffects > 0)
             {
                 return Ok();
@@ -71,7 +73,9 @@ namespace MISA.Emis.Web.Controllers
         [HttpPut("{entityId}")]
         public IActionResult Update(Guid entityId, T entity)
         {
-            var rowEffects = _baseService.Update(entityId, entity);
+            var claimsIdentity = this.User.Identity as ClaimsIdentity;
+            var accountId = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
+            var rowEffects = _baseService.Update(Guid.Parse(accountId) ,entityId, entity);
             if(rowEffects > 0)
             {
                 return Ok();

@@ -45,13 +45,13 @@ namespace MISA.Emis.Infracstructure.Repository
             return _dbConnection.QueryFirstOrDefault<T>($"Proc_Get{_className}ById", dynamicParameters ,commandType: CommandType.StoredProcedure);
         }
 
-        public int Insert(T entity)
+        public int InsertWithoutAccount(T entity)
         {
             MappingParameterValue(entity);
             return _dbConnection.Execute($"Proc_Insert{_className}", dynamicParameters, commandType: CommandType.StoredProcedure);
         }
 
-        public int Update(Guid entityId, T entity)
+        public int UpdateWithoutAccount(Guid entityId, T entity)
         {
             dynamicParameters.Add($"@m_{_className}Id", entityId);
             MappingParameterValue(entity);
@@ -84,6 +84,21 @@ namespace MISA.Emis.Infracstructure.Repository
         public IEnumerable<T> GetAllWithoutAccount()
         {
             return _dbConnection.Query<T>($"Proc_Get{_className}s", commandType: CommandType.StoredProcedure);
+        }
+
+        public int Insert(Guid accountId, T entity)
+        {
+            MappingParameterValue(entity);
+            dynamicParameters.Add("@m_accountId", accountId);
+            return _dbConnection.Execute($"Proc_Insert{_className}", dynamicParameters, commandType: CommandType.StoredProcedure);
+        }
+
+        public int Update(Guid accountId, Guid entityId, T entity)
+        {
+            dynamicParameters.Add($"@m_{_className}Id", entityId);
+            dynamicParameters.Add("@accountId", accountId);
+            MappingParameterValue(entity);
+            return _dbConnection.Execute($"Proc_Update{_className}", dynamicParameters, commandType: CommandType.StoredProcedure);
         }
         #endregion
 
