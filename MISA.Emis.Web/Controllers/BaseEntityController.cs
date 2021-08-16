@@ -45,7 +45,7 @@ namespace MISA.Emis.Web.Controllers
 
         [Authorize]
         [HttpGet("{entityId}")]
-        public IActionResult GetById(Guid entityId)
+        public virtual IActionResult GetById(Guid entityId)
         {
             var entity = _baseRepository.GetById(entityId);
             if (entity != null)

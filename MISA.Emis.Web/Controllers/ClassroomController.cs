@@ -14,19 +14,29 @@ namespace MISA.Emis.Web.Controllers
     
     public class ClassroomController : BaseEntityController<Classroom>
     {
-        IBaseService<Classroom> _baseService;
-        public ClassroomController( IBaseRepository<Classroom> baseRepository, IBaseService<Classroom> baseService):base(baseRepository, baseService)
+        IClassroomService _classroomService;
+        public ClassroomController( IBaseRepository<Classroom> baseRepository, IClassroomService classroomService):base(baseRepository, classroomService)
         {
-            _baseService = baseService;
+            _classroomService = classroomService;
         }
         public override IActionResult Insert(Classroom classroom)
         {
             var claimsIdentity = this.User.Identity as ClaimsIdentity;
             var accountId = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
-            var rowEffects = _baseService.Insert(Guid.Parse(accountId), classroom);
+            var rowEffects = _classroomService.Insert(Guid.Parse(accountId), classroom);
             if (rowEffects > 0)
             {
                 return Ok();
+            }
+            return NoContent();
+        }
+
+        public override IActionResult GetById(Guid entityId)
+        {
+            var classroom = _classroomService.GetClassroomById(entityId);
+            if (classroom != null)
+            {
+                return Ok(classroom);
             }
             return NoContent();
         }

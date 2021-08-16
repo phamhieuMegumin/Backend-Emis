@@ -39,7 +39,7 @@ namespace MISA.Emis.Core.Entities
         /// <summary>
         /// Danh sách môn học của lớp
         /// </summary>
-        public List<Subject> Subject { get; set; }
+        public List<Guid> Subject { get; set; }
 
         /// <summary>
         /// Mô tả về lớp học 
