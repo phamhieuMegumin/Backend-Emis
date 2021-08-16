@@ -15,9 +15,11 @@ namespace MISA.Emis.Web.Controllers
     public class ClassroomController : BaseEntityController<Classroom>
     {
         IClassroomService _classroomService;
+        IBaseRepository<Classroom> _baseRepository;
         public ClassroomController( IBaseRepository<Classroom> baseRepository, IClassroomService classroomService):base(baseRepository, classroomService)
         {
             _classroomService = classroomService;
+            _baseRepository = baseRepository;
         }
         public override IActionResult Insert(Classroom classroom)
         {
@@ -37,6 +39,16 @@ namespace MISA.Emis.Web.Controllers
             if (classroom != null)
             {
                 return Ok(classroom);
+            }
+            return NoContent();
+        }
+
+        public override IActionResult Update(Guid entityId, Classroom entity)
+        {
+            var rowEffects = _baseRepository.UpdateWithoutAccount(entityId, entity);
+            if(rowEffects > 0)
+            {
+                return Ok();
             }
             return NoContent();
         }

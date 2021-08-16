@@ -33,5 +33,23 @@ namespace MISA.Emis.Core.Service
             }
             return rowEffects;
         }
+
+        public int UpdateManage(Guid classroomId, List<ManageSubject> listSubject)
+        {
+            // Thực hiện xóa danh sách môn học của lớp
+            var rowEffects = _baseRepository.Delete(classroomId);
+            var result = 0;
+            // Thêm mới danh sách môn học mới
+            foreach (var subject in listSubject)
+            {
+                subject.ClassroomId = classroomId;
+                var res = _baseRepository.InsertWithoutAccount(subject);
+                if (res > 0)
+                {
+                    result++;
+                }
+            }
+            return result;
+        }
     }
 }

@@ -30,5 +30,15 @@ namespace MISA.Emis.Web.Controllers
             }
             return NoContent();
         }
+        [HttpPut("UpdateList/{classroomId}")]
+        public IActionResult UpdateList(Guid classroomId, List<ManageSubject> listSubject)
+        {
+            var rowEffects = _manageSubjectService.UpdateManage(classroomId, listSubject);
+            if(rowEffects > 0)
+            {
+                return Ok();
+            }
+            return NoContent();
+        }
     }
 }

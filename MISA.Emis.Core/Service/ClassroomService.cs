@@ -31,5 +31,6 @@ namespace MISA.Emis.Core.Service
             classroom.Subject = listSubject;
             return classroom;
         }
+
     }
 }

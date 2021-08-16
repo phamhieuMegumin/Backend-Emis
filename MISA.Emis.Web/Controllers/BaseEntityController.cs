@@ -71,7 +71,7 @@ namespace MISA.Emis.Web.Controllers
 
         [Authorize]
         [HttpPut("{entityId}")]
-        public IActionResult Update(Guid entityId, T entity)
+        public virtual IActionResult Update(Guid entityId, T entity)
         {
             var claimsIdentity = this.User.Identity as ClaimsIdentity;
             var accountId = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
