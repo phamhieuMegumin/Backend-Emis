@@ -52,5 +52,14 @@ namespace MISA.Emis.Web.Controllers
             }
             return NoContent();
         }
+        [HttpGet("TestGetCode")]
+        public IActionResult GetCode()
+        {
+            var random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var newString = new string(Enumerable.Repeat(chars, 6)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+            return Ok(newString);
+        }
     }
 }

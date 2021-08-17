@@ -17,7 +17,7 @@ namespace MISA.Emis.Core.Service
             _baseRepository = baseRepository;
         }
 
-        public int Insert(Guid accountId, T entity)
+        public virtual int Insert(Guid accountId, T entity)
         {
             return _baseRepository.Insert(accountId, entity);
         }

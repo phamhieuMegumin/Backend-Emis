@@ -17,6 +17,11 @@ namespace MISA.Emis.Core.Entities
         public Guid ClassroomId { get; set; }
 
         /// <summary>
+        /// Mã lớp học
+        /// </summary>
+        public string ClassroomCode { get; set; }
+
+        /// <summary>
         /// ID tài khoản thuộc lớp học
         /// </summary>
         public Guid AccountId { get; set; }

@@ -22,5 +22,10 @@ namespace MISA.Emis.Infracstructure.Repository
             dynamicParameters.Add("@m_classroomId", classId);
             return _dbConnection.Query<ManageSubject>("Proc_GetManageSubjectByClassId", dynamicParameters, commandType: CommandType.StoredProcedure);
         }
+        public override int Delete(Guid entityId)
+        {
+            dynamicParameters.Add("@m_classroomId", entityId);
+            return _dbConnection.Execute("Proc_DeleteManageSubject", dynamicParameters, commandType: CommandType.StoredProcedure);
+        }
     }
 }

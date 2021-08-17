@@ -57,7 +57,7 @@ namespace MISA.Emis.Infracstructure.Repository
             dynamicParameters.Add($"@m_{_className}Id", entityId);
             return _dbConnection.Execute($"Proc_Update{_className}", dynamicParameters, commandType: CommandType.StoredProcedure);
         }
-        public int Delete(Guid entityId)
+        public virtual int Delete(Guid entityId)
         {
             dynamicParameters.Add($"@m_{_className}Id", entityId);
             return _dbConnection.Execute($"Proc_Delete{_className}", dynamicParameters, commandType: CommandType.StoredProcedure);
@@ -97,7 +97,7 @@ namespace MISA.Emis.Infracstructure.Repository
         {
             MappingParameterValue(entity);
             dynamicParameters.Add($"@m_{_className}Id", entityId);
-            dynamicParameters.Add("@accountId", accountId);
+            //dynamicParameters.Add("@accountId", accountId);
             return _dbConnection.Execute($"Proc_Update{_className}", dynamicParameters, commandType: CommandType.StoredProcedure);
         }
         #endregion

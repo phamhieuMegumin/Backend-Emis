@@ -17,6 +17,13 @@ namespace MISA.Emis.Infracstructure.Repository
         {
 
         }
+
+        public bool CheckClassroomCodeExist(string classroomCode)
+        {
+            dynamicParameters.Add("@m_classroomCode", classroomCode);
+            return _dbConnection.ExecuteScalar<bool>("Proc_CheckClassroomCodeExist", dynamicParameters, commandType: CommandType.StoredProcedure);
+        }
+
         public Guid GetNewestClassroomId()
         {
             return _dbConnection.ExecuteScalar<Guid>("Proc_GetNewestClass", commandType: CommandType.StoredProcedure);

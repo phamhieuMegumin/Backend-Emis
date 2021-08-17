@@ -11,11 +11,11 @@ namespace MISA.Emis.Core.Service
 {
     public class ManageSubjectService : BaseService<ManageSubject>, IManageSubjectService
     {
-        IBaseRepository<ManageSubject> _baseRepository;
+        IManageSubjectRepository _subjectRepository;
         IClassroomRepository _classroomRepository;
-        public ManageSubjectService(IBaseRepository<ManageSubject> baseRepository, IClassroomRepository classroomRepository):base(baseRepository)
+        public ManageSubjectService(IManageSubjectRepository subjectRepository, IClassroomRepository classroomRepository):base(subjectRepository)
         {
-            _baseRepository = baseRepository;
+            _subjectRepository = subjectRepository;
             _classroomRepository = classroomRepository;
         }
         public int InsertList(List<ManageSubject> listSubject)
@@ -25,7 +25,7 @@ namespace MISA.Emis.Core.Service
             foreach (var subject in listSubject)
             {
                 subject.ClassroomId = classId;
-                var res = _baseRepository.InsertWithoutAccount(subject);
+                var res = _subjectRepository.InsertWithoutAccount(subject);
                 if (res > 0)
                 {
                     rowEffects++;
@@ -37,13 +37,13 @@ namespace MISA.Emis.Core.Service
         public int UpdateManage(Guid classroomId, List<ManageSubject> listSubject)
         {
             // Thực hiện xóa danh sách môn học của lớp
-            var rowEffects = _baseRepository.Delete(classroomId);
+            var rowEffects = _subjectRepository.Delete(classroomId);
             var result = 0;
             // Thêm mới danh sách môn học mới
             foreach (var subject in listSubject)
             {
                 subject.ClassroomId = classroomId;
-                var res = _baseRepository.InsertWithoutAccount(subject);
+                var res = _subjectRepository.InsertWithoutAccount(subject);
                 if (res > 0)
                 {
                     result++;

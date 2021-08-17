@@ -11,17 +11,17 @@ namespace MISA.Emis.Core.Service
 {
     public class ClassroomService:BaseService<Classroom>, IClassroomService
     {
-        IBaseRepository<Classroom> _baseRepository;
+        IClassroomRepository _classroomRepository;
         IManageSubjectRepository _manageSubjectRepository;
-        public ClassroomService(IBaseRepository<Classroom> baseRepository, IManageSubjectRepository manageSubjectRepository) :base(baseRepository)
+        public ClassroomService(IClassroomRepository classroomRepository, IManageSubjectRepository manageSubjectRepository) :base(classroomRepository)
         {
-            _baseRepository = baseRepository;
+            _classroomRepository = classroomRepository;
             _manageSubjectRepository = manageSubjectRepository;
         }
 
         public Classroom GetClassroomById(Guid classroomId)
         {
-            var classroom = _baseRepository.GetById(classroomId);
+            var classroom = _classroomRepository.GetById(classroomId);
             var listManageSubject = _manageSubjectRepository.GetManageSubjectById(classroomId);
             List<Guid> listSubject = new List<Guid>();
             foreach (var manageSubject in listManageSubject)
@@ -30,6 +30,20 @@ namespace MISA.Emis.Core.Service
             }
             classroom.Subject = listSubject;
             return classroom;
+        }
+        public override int Insert(Guid accountId, Classroom entity)
+        {
+            var random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var newCode = new string(Enumerable.Repeat(chars, 6)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+            while (_classroomRepository.CheckClassroomCodeExist(newCode))
+            {
+                newCode = new string(Enumerable.Repeat(chars, 6)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+            }
+            entity.ClassroomCode = newCode;
+            return base.Insert(accountId, entity);
         }
 
     }

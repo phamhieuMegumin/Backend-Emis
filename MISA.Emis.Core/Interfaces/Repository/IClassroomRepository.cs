@@ -17,5 +17,15 @@ namespace MISA.Emis.Core.Interfaces.Repository
         /// </returns>
         /// CreatedBy : PQHieu(15/08/2021)
         Guid GetNewestClassroomId();
+
+        /// <summary>
+        /// Kiểm tra mã lớp học đã tồn tại chưa
+        /// </summary>
+        /// <returns>
+        /// true - Mã lớp đã tồn tại
+        /// falsw - Mã lớp chưa tồn tại
+        /// </returns>
+        /// CreatedBy : PQHieu(17/08/2021)
+        bool CheckClassroomCodeExist(string classroomCode);
     }
 }
