@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MISA.Emis.Core.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,11 +30,13 @@ namespace MISA.Emis.Core.Entities
         /// <summary>
         /// Tên lớp học
         /// </summary>
+        [Required("Không được để trống", "ClassroomName")]
         public string ClassroomName { get; set; }
 
         /// <summary>
         /// ID khối học
         /// </summary>
+        [Required("Không được để trống", "GradeId")]
         public Guid GradeId { get; set; }
 
         /// <summary>

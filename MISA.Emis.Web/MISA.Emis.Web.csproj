@@ -14,4 +14,9 @@
     <ProjectReference Include="..\MISA.Emis.Infracstructure\MISA.Emis.Infracstructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\upload\" />
+  </ItemGroup>
+
 </Project>

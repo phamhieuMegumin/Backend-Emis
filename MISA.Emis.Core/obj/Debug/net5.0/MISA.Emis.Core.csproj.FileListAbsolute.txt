@@ -10,3 +10,5 @@ D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core
 D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.dll
 D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\ref\MISA.Emis.Core.dll
 D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.pdb
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.Properties.Resources.resources
+D:\Fresher-Emis\backend\MISA.Emis\MISA.Emis.Core\obj\Debug\net5.0\MISA.Emis.Core.csproj.GenerateResource.cache

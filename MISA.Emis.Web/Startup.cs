@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MISA.Emis.Core.Exceptions;
 using MISA.Emis.Core.Interfaces.Repository;
 using MISA.Emis.Core.Interfaces.Service;
 using MISA.Emis.Core.Service;
@@ -43,7 +44,8 @@ namespace MISA.Emis.Web
                                       .AllowAnyMethod(); ;
                                   });
             });
-            services.AddControllers();
+            services.AddControllers(options =>
+               options.Filters.Add(new HttpResponseExceptionFilter()));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.Emis.Web", Version = "v1" });
@@ -85,6 +87,8 @@ namespace MISA.Emis.Web
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.Emis.Web v1"));
             }
 
+            app.UseCors();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -92,8 +96,6 @@ namespace MISA.Emis.Web
             app.UseAuthentication();
 
             app.UseAuthorization();
-
-            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
