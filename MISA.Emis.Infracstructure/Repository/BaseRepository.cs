@@ -68,7 +68,7 @@ namespace MISA.Emis.Infracstructure.Repository
         /// </summary>
         /// <param name="entity">Đối tượng cần mapping</param>
         /// CreatedBy : PQHieu 11/06/2021
-        void MappingParameterValue(T entity)
+        public void MappingParameterValue(T entity)
         {
             // lấy tất cả thuộc tính của đối tượng
             var properties = typeof(T).GetProperties();

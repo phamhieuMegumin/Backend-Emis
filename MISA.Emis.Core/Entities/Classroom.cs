@@ -45,6 +45,11 @@ namespace MISA.Emis.Core.Entities
         public string GradeName { get; set; }
 
         /// <summary>
+        /// Đường dẫn chứa ảnh lớp học
+        /// </summary>
+        public string ImageUrl { get; set; }
+
+        /// <summary>
         /// Danh sách môn học của lớp
         /// </summary>
         public List<Guid> Subject { get; set; }

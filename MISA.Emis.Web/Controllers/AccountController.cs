@@ -17,8 +17,10 @@ namespace MISA.Emis.Web.Controllers
     public class AccountController:ControllerBase
     {
         IAccountService _accountService;
-        public AccountController(IAccountService accountService)
+        IAccountRepository _accountRepository;
+        public AccountController(IAccountService accountService, IAccountRepository accountRepository)
         {
+            _accountRepository = accountRepository;
             _accountService = accountService;
         }
 
@@ -66,9 +68,10 @@ namespace MISA.Emis.Web.Controllers
         {
             var claimsIdentity = this.User.Identity as ClaimsIdentity;
             var accountId = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
-            if (accountId != null)
+            var user = _accountRepository.GetById(Guid.Parse(accountId));
+            if (user != null)
             {
-                return Ok(accountId);
+                return Ok(user);
             }
             return NoContent();
         }
